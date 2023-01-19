@@ -1,5 +1,5 @@
 # YOUR BUCKET LIST!
-#### Video Demo:  <URL https://www.youtube.com/watch?v=NUsvtYJ29fs>
+#### Video Demo:  https://www.youtube.com/watch?v=NUsvtYJ29fs
 
 #### Description:
 The name of this project is **"Your Bucket List!"**
