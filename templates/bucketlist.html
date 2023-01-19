@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My List
+{% endblock %}
+
+{% block main %}
+
+    <div class="section">
+
+        <h1 class="needpadding">So much I could do...</h1>
+        <div class="breath"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>To Do</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the database entries to display them in this table -->
+                {% for entry in my_list %}
+                    <tr>
+                        <td>{{ entry["name"] }}</td>
+                        {% if entry["status"] == "DONE": %}
+                            <!-- <td>{{ entry["status"] }}</td> -->
+                            <td>Completed on: {{ entry["date"] }}</td>
+                        {% else: %}
+                            <td>TO DO!</td>
+                        {% endif %}
+                        <td>
+                            <form action="/done" method="post">
+                                <input name="id" type="hidden" value="{{ entry.id }}">
+                                <input type="submit" value="Set to DONE">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/undone" method="post">
+                                <input name="id" type="hidden" value="{{ entry.id }}">
+                                <input type="submit" value="Set to NOT DONE">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/delete" method="post">
+                                <input name="id" type="hidden" value="{{ entry.id }}">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

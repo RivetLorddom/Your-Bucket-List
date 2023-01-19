@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="section">
+
+        <h1 class="needpadding">Add a new goal to one of your lists!</h1>
+        <div class="breath"></div>
+        <form action="/" method="post">
+            <div class="breath" class="input-group input-group-lg">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" autocomplete="off" autofocus name="name" placeholder="Type here...">
+            <br>
+            <select class="form-select" aria-label="Default select example" autofocus name="type">
+                <option selected>Choose category</option>
+                <option value="bucket">Bucket List</option>
+                <option value="watch">Watch List</option>
+                <option value="read">Read List</option>
+                <option value="task">Task List</option>
+            </select>
+            <div class="breath"></div>
+            <input type="submit" value="Add Your Goal">
+            </div>
+        </form>
+    </div>
+{% endblock %}
